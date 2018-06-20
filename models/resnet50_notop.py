@@ -1,7 +1,7 @@
 '''
 Created on Feb 1, 2018
 
-@author: muralidarant
+@author: rameshpr
 '''
 import os
 import numpy as np
@@ -19,7 +19,7 @@ os.environ["CUDA_VISIBLE_DEVICES"]="0"
 import tensorflow as tf
 from keras.backend.tensorflow_backend import set_session
 
-from lib.common import FEATURE_TYPE
+from libs.common import FEATURE_TYPE
 
 class resnet50_notop(object):
     '''

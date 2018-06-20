@@ -8,8 +8,8 @@ import os
 import cv2
 import numpy as np
 
-from lib import FeatureExtractor
-from lib.common import image_path, Sizes, MODEL_TYPE
+from libs import FeatureExtractor
+from libs.common import image_path, Sizes, MODEL_TYPE
 
 
 class MainWindow(QtGui.QMainWindow):

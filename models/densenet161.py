@@ -10,7 +10,7 @@ from custom_layers import Scale
 import numpy as np
 from numpy.linalg import norm
 import cv2
-from lib.common import FEATURE_TYPE
+from libs.common import FEATURE_TYPE
 
 def DenseNet(nb_dense_block=4, growth_rate=48, nb_filter=96, reduction=0.5, dropout_rate=0.0, weight_decay=1e-4, feature_type = FEATURE_TYPE.GLOBAL_FEATURES):
     '''Instantiate the DenseNet 161 architecture,
@@ -72,8 +72,8 @@ def DenseNet(nb_dense_block=4, growth_rate=48, nb_filter=96, reduction=0.5, drop
     if (feature_type == FEATURE_TYPE.GLOBAL_FEATURES) or (feature_type == FEATURE_TYPE.MANHATTON):
         x = GlobalAveragePooling2D(name='pool'+str(final_stage))(x)
 
-    #x = Dense(classes, name='fc6')(x)
-    #x = Activation('softmax', name='prob')(x)
+    x = Dense(1000, name='fc6')(x)
+    x = Activation('softmax', name='prob')(x)
 
     model = Model(img_input, x, name='densenet')
 
